@@ -9,7 +9,7 @@ export const FeedBack = () => {
   const [ good, setGood ] = useState(0);
   const [ neutral, setNeutral ] = useState(0);
   const [ bad, setBad] = useState(0);
- 
+  const optionsFeedBack = { good, neutral, bad };
 
   const leaveFeedback = propertyName => {
    
@@ -44,7 +44,7 @@ export const FeedBack = () => {
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={['good', 'neutral', 'bad']}
+            options={Object.keys(optionsFeedBack)}
             onLeaveFeedback={leaveFeedback}
           />
         </Section>
